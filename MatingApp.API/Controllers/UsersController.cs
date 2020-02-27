@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MatingApp.API.Data;
 using MatingApp.API.Dtos;
+using MatingApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MatingApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
